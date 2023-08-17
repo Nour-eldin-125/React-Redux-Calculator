@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import "./App.css";
 import Numbers from "./components/Numbers";
 import Operators from "./components/Operators";
@@ -22,9 +21,10 @@ function App() {
 		}
 	}
 	return (
-		<div class="calculator">
-			<div class="Grid">
-				<ResultField />
+
+		<div className="calculator">
+			<div className="Grid">
+				<ResultField/>
 				<Numbers numbers={numbers.filter((i) => range(i, 6, 10))} />
 				<Operators operator={operators[0]} />
 				<Numbers numbers={numbers.filter((i) => range(i, 3, 7))} />

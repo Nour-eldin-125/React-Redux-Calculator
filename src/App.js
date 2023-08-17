@@ -26,15 +26,15 @@ function App() {
 			<div className="Grid">
 				<ResultField/>
 				<Numbers numbers={numbers.filter((i) => range(i, 6, 10))} />
-				<Operators operator={operators[0]} />
+				<Operators oper={operators[0]} />
 				<Numbers numbers={numbers.filter((i) => range(i, 3, 7))} />
-				<Operators operator={operators[1]} />
+				<Operators oper={operators[1]} />
 				<Numbers numbers={numbers.filter((i) => range(i, 0, 4))} />
-				<Operators operator={operators[2]} />
-				<Operators operator={operators[5]} />
+				<Operators oper={operators[2]} />
+				<Operators oper={operators[5]} />
 				<Numbers numbers={numbers.filter(i=>i==0)} />
-				<Operators operator={operators[4]} />
-				<Operators operator={operators[3]} />
+				<Operators oper={operators[4]} />
+				<Operators oper={operators[3]} />
 			</div>
 		</div>
 	);

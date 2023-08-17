@@ -5,7 +5,7 @@ This project is a simple calculator application built using React and Redux.
 ## Table of Contents
 
 - [Features](#features)
-- [View Design](#view-design)
+- [Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Installation](#installation)
 - [Usage](#usage)
@@ -18,7 +18,7 @@ This project is a simple calculator application built using React and Redux.
 - Responsive design for various screen sizes.
 - State management using Redux for a consistent user experience.
 
-## View Design
+## Getting Started
 <img src = "./public/calc.png">
 
 ### Prerequisites

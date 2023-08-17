@@ -10,12 +10,14 @@ class Operators extends React.Component {
             classname:''
         }
     }
+
+
     addOp(op) {
-        if(op === "="){
+        if(op == "="){
             this.props.calculate()
         }
-        else if (op === "C") {
-            this.props.remove()
+        else if (op == "C") {
+            this.props.clear()
         }
         else {
             this.props.addOperator(op)
@@ -24,21 +26,22 @@ class Operators extends React.Component {
 
     componentDidMount() {
         this.setState({
-            operator: this.props.operator.op,
-            classname:this.props.operator.classname
+            operator: this.props.oper.op,
+            classname:this.props.oper.classname
         })
     }
     componentDidUpdate(prevProps) {
 
         if (prevProps.operator !== this.props.operator) {
             this.setState({
-                operator: this.props.operator.op,
-                classname:this.props.operator.classname
+                operator: this.props.oper.op,
+                classname:this.props.oper.classname
             })
         }
     }
-
+    
     render() {
+        console.log(this.props)
         return (
             <>
                 <button className={this.state.classname}
@@ -51,7 +54,6 @@ class Operators extends React.Component {
         
     }
 
-
 }
 
 const mapStateToProps = (state) => {
@@ -59,7 +61,8 @@ const mapStateToProps = (state) => {
         firstArg: state.firstArg,
         operator: state.operator,
         secondArg: state.secondArg,
-        secondOpFlap: state.secondOpFlap,
+        opFlag: state.opFlag,
+        secondOpFlag: state.secondOpFlag,
         calculate: state.calculate,
         result: state.result
     }

@@ -1,34 +1,42 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
 import { connect } from "react-redux";
 import { Remove } from "../store/actions";
-
 
 
 class ResultField extends React.Component {
     constructor(props) {
         super(props);
         this.state = { 
-            firstArg:'',
+            firstArg:0,
             operator: "",
-            opFalg:false,
-            secondArg:'',
-            secondOpFlap:false,
-            calculate:false,
-            result:0
+            opFlag:'',
+            secondArg:0,
+            secondOpFlag:'',
+            calculate:'',
+            result:''
         }
     }
 
     componentDidUpdate(prevProps) {
-        let inp = document.getElementById("display");
-        if(this.props.calculate)
-            inp.value = this.props.result;
-        else if (this.props.secondOpFlap)
-            inp.value = this.props.secondArg;
-        else if (this.props.opFalg)
-            inp.value = this.props.operator;
-        else
-            inp.value = this.props.firstArg;
+        if (prevProps != this.props) {
+            let inp = document.getElementById("display");
+            inp.value = ""
+            console.log("Result Field : ",this.props)
+
+            if(this.props.calculate){
+                 inp.value = this.props.result
+                }
+            else if (this.props.secondOpFlag){
+                inp.value = this.props.secondArg
+            }
+            else if (this.props.opFlag){
+                console.log("Result Field : ",this.props)
+                inp.value = this.props.operator
+            }
+            else{
+                inp.value = this.props.firstArg
+            }
+        }
     }
 
     render() {
@@ -41,7 +49,8 @@ const mapStateToProps = (state) => {
         firstArg: state.firstArg,
         operator: state.operator,
         secondArg: state.secondArg,
-        secondOpFlap: state.secondOpFlap,
+        opFlag: state.opFlag,
+        secondOpFlag: state.secondOpFlag,
         calculate: state.calculate,
         result: state.result
     }

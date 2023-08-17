@@ -1,32 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
+import Numbers from "./components/Numbers";
+import Operators from "./components/Operators";
+import ResultField from "./components/ResultField";
 
+const numbers = [...Array(10).keys()].map((i) => i);
+const operators = [
+	{ op: "+", classname: "operator" },
+	{ op: "-", classname: "operator" },
+	{ op: "*", classname: "operator" },
+	{ op: "/", classname: "operator" },
+	{ op: "=", classname: "calculate" },
+	{ op: "C", classname: "clear" },
+];
+
+console.log(numbers);
 function App() {
-  return (
-    
-    <div class="calculator">
-  
-      <div class="Grid">
-          <input type="text" id="display" readonly = "true" />
-          <button onclick="appendToDisplay('7')">7</button>
-          <button onclick="appendToDisplay('8')">8</button>
-          <button onclick="appendToDisplay('9')">9</button>
-          <button class="operator" onclick="appendToDisplay('+')">+</button>
-          <button onclick="appendToDisplay('6')">6</button>
-          <button onclick="appendToDisplay('5')">5</button>
-          <button onclick="appendToDisplay('4')">4</button>
-          <button class="operator" onclick="appendToDisplay('-')">-</button>
-          <button onclick="appendToDisplay('3')">3</button>
-          <button onclick="appendToDisplay('2')">2</button>
-          <button onclick="appendToDisplay('1')">1</button>
-        <button class="operator" onclick="appendToDisplay('*')">*</button>
-        <button class="clear" onclick="clearDisplay()">C</button>
-        <button onclick="appendToDisplay('0')">0</button>
-        <button class="calculate" onclick="calculateResult()">=</button>
-        <button class="operator" onclick="appendToDisplay('/')">/</button>
-      </div>
-    </div>
-  );
+	function range(i, x, y) {
+		if (i > x && i < y) {
+			return i;
+		}
+	}
+	return (
+		<div class="calculator">
+			<div class="Grid">
+				<ResultField />
+				<Numbers numbers={numbers.filter((i) => range(i, 6, 10))} />
+				<Operators operator={operators[0]} />
+				<Numbers numbers={numbers.filter((i) => range(i, 3, 7))} />
+				<Operators operator={operators[1]} />
+				<Numbers numbers={numbers.filter((i) => range(i, 0, 4))} />
+				<Operators operator={operators[2]} />
+				<Operators operator={operators[5]} />
+				<Numbers numbers={numbers.filter(i=>i==0)} />
+				<Operators operator={operators[4]} />
+				<Operators operator={operators[3]} />
+			</div>
+		</div>
+	);
 }
 
 export default App;

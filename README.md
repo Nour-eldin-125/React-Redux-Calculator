@@ -59,3 +59,7 @@ Open your web browser and navigate to http://localhost:3000 to use the calculato
 * Redux: A predictable state container for managing application state.
 * React-Redux: Official Redux bindings for React.
 * HTML5 and CSS3: Markup and styling of the application.
+
+## View the Project
+
+You can view the deployed Caclulator application by clicking [here](http://react-redux-calculator-three.vercel.app).

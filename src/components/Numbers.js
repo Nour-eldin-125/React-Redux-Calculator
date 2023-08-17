@@ -7,12 +7,11 @@ import { AddNumber } from "../store/actions";
 class Numbers extends React.Component {
     constructor(props) {
         super(props);
-        console.log("Numbers",this.props.numbers)
+        // console.log("Numbers",this.props.numbers)
     }
     add (number){
-        console.log("Numbers Args:",this.props.firstArg, this.props.secondArg)
-        this.props.secondOpFlap ? this.props.addNumber(this.props.secondArg? ('' + this.props.secondArg + number): number) :this.props.addNumber(this.props.firstArg?(''+this.props.firstArg + number): number) 
-        
+        console.log("Numbers Args:",this.props.firstArg, this.props.secondArg, "props:",this.props)
+        this.props.addNumber(number)
     }
     render() {
         return (
@@ -31,7 +30,8 @@ const mapStateToProps = (state) =>{
     return {
         firstArg:state.firstArg,
         secondArg:state.secondArg,
-        secondOpFlap:state.secondOpFlap,
+        secondOpFlag:state.secondOpFlag,
+        opFlag:state.opFlag
 
     }
 }

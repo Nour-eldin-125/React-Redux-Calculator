@@ -63,4 +63,4 @@ Open your web browser and navigate to http://localhost:3000 to use the calculato
 
 ## View the Project
 
-You can view the deployed Caclulator application by clicking [here](http://react-redux-calculator-three.vercel.app).
+You can view the deployed Caclulator application by clicking [here](react-redux-calculator-chi.vercel.app).

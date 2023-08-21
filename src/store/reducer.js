@@ -55,7 +55,7 @@ export default function reducer (state=initialState, action) {
             }
         case calculate:
             return {
-                ...state,calculate:true,result:eval(state.secondArg+state.operator+state.firstArg)
+                ...state,calculate:true,result:eval(state.firstArg+state.operator+state.secondArg)
             }
         case remove:
             if (state.calculate) {
